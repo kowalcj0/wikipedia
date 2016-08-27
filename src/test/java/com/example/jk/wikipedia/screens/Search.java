@@ -11,10 +11,9 @@ import java.util.*;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 
-/**
- * Created by jk on 19/08/2016.
- */
 public class Search {
+
+    // define all important UI elements
     private static String btnNameMenu = "Navigate up";
 
     private static String btnIDClose = "search_close_btn";
@@ -30,6 +29,9 @@ public class Search {
     private static String lstIDListItemTitle = "page_list_item_title";
 
     public static void allImportantElementsAreVisible(AppiumDriver driver){
+        /*
+        * Will check whether all important UI elements are visible
+        * */
         WebDriverWait wait = new WebDriverWait(driver, 5);
 
         wait.until(ExpectedConditions.visibilityOf(driver.findElementById(btnIDClose)));
@@ -43,19 +45,35 @@ public class Search {
     }
 
     public static void openTheMenu(AppiumDriver driver) {
+        /*
+        * Will tap on the menu button. (which btw. doesn't work :) )
+        * */
         driver.findElementByName(btnNameMenu).click();
     }
 
     public static void searchFor(AppiumDriver driver, String what) {
+        /*
+        * Will search for the specified term
+        * */
         driver.findElementById(inptIDSearch).sendKeys(what);
         driver.hideKeyboard();
     }
 
     public static void close(AppiumDriver driver) {
+        /*
+        * Will tap on the close button.
+        * As a result you should end up on the Home Screen.
+        * */
         driver.findElementById(btnIDClose).click();
     }
 
     public static void searchResultsShouldBeVisible(AppiumDriver driver, String what) {
+        /*
+        * Checks whether:
+        * - search result list is visible
+        * - the result list is not empty
+        * - the article titles on the search result list contain sought term
+        * */
         WebDriverWait wait = new WebDriverWait(driver, 5);
         wait.until(ExpectedConditions.visibilityOf(driver.findElementById(lstIDSearchResults)));
 
@@ -66,6 +84,9 @@ public class Search {
     }
 
     private static int countResultsItems(AppiumDriver driver) {
+        /*
+        * Get the number of visible search results
+        * */
         List<WebElement> elements = driver.findElements(By.id(lstIDListItem));
         return elements.size();
     }
@@ -85,6 +106,9 @@ public class Search {
     }
 
     private static boolean isSoughtTermOnTheResultTitlesList(ArrayList<String> resultTitles, String term) {
+        /*
+        * Will check if the sought term appears among the search result titles
+        * */
         term = term.toLowerCase();
         for(String str: resultTitles) {
             if(str.trim().toLowerCase().contains(term))

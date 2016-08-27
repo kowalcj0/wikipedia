@@ -4,9 +4,6 @@ import io.appium.java_client.AppiumDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-/**
- * Created by jk on 19/08/2016.
- */
 public class Menu {
 
     private static String btnLogIn = "Log in to Wikipedia";
@@ -21,6 +18,9 @@ public class Menu {
     private static String btnSupportWiki = "Support Wikipedia";
 
     public static void allImportantElementsAreVisible(AppiumDriver driver){
+        /*
+        * Will check whether all important UI elements are visible
+        * */
         WebDriverWait wait = new WebDriverWait(driver, 5);
         wait.until(ExpectedConditions.visibilityOf(driver.findElementByName(btnLogIn)));
         wait.until(ExpectedConditions.visibilityOf(driver.findElementByName(btnExplore)));

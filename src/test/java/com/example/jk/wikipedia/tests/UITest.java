@@ -1,9 +1,5 @@
 package com.example.jk.wikipedia.tests;
 
-/**
- * Created by kowal on 27/08/2016.
- */
-
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.remote.MobileCapabilityType;
@@ -24,7 +20,7 @@ public class UITest {
         public AppiumDriver driver;
         private WebDriverWait wait;
 
-        // app to install - details
+        // installed app details
         final String testAppPackage = "org.wikipedia.beta";
         final String testAppActivity = "org.wikipedia.MainActivity";
 
@@ -42,14 +38,15 @@ public class UITest {
 
         @After
         public void tearDown() throws Exception {
+            // Reset the state of the app.
+            // It means that the next time the app starts it will be in state just like after a fresh installation.
+            // This make the test more robust but unfortunately it slows them down a bit.
             driver.resetApp();
             driver.quit();
         }
 
         private DesiredCapabilities installedAppCaps() throws Exception {
-        /*
-        * set up capabilities for the test app
-        * */
+            // set up capabilities for the test app
             DesiredCapabilities capabilities = DesiredCapabilities.android();
             capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "Oppo Find7");
             capabilities.setCapability(MobileCapabilityType.PLATFORM_VERSION, "6.0");

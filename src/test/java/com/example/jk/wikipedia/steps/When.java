@@ -1,17 +1,11 @@
 package com.example.jk.wikipedia.steps;
 
-import com.example.jk.wikipedia.screens.Home;
-import com.example.jk.wikipedia.screens.Login;
-import com.example.jk.wikipedia.screens.Menu;
-import com.example.jk.wikipedia.screens.Search;
+import com.example.jk.wikipedia.screens.*;
 import io.appium.java_client.AppiumDriver;
 
-/**
- * Created by jk on 19/08/2016.
- */
 public class When {
 
-    public static void IOpenTheMainMenu(AppiumDriver driver) {
+    public static void IOpenTheMainMenuOnTheHomeScreen(AppiumDriver driver) {
         Home.openMenu(driver);
     }
 
@@ -27,11 +21,11 @@ public class When {
         Menu.goToLoginScreen(driver);
     }
 
-    public static void IPressGoBackButtnonOnTheLoginScreen(AppiumDriver driver) {
+    public static void IPressGoBackButtonOnTheLoginScreen(AppiumDriver driver) {
         Login.pressGoBackButton(driver);
     }
 
-    public static void ITapOnTheSeachBox(AppiumDriver driver) {
+    public static void ITapOnTheSearchBox(AppiumDriver driver) {
         Home.openSearchScreen(driver);
     }
 
@@ -42,5 +36,22 @@ public class When {
 
     public static void ICloseTheSearchScren(AppiumDriver driver) {
         Search.close(driver);
+    }
+
+    public static void IOpenARandomArticle(AppiumDriver driver) {
+        /*
+        * Will open the menu and click on the "Random" option
+        * Before tapping on the menu button, it will detect on which screen are we.
+        * */
+        if (Home.amIOnThisScreen(driver))
+            When.IOpenTheMainMenuOnTheHomeScreen(driver);
+        else if (Article.amIOnThisScreen(driver))
+            When.IOpenTheMainMenuOnTheArticleScreen(driver);
+
+        And.when.IChooseRandomArticleOption(driver);
+    }
+
+    private static void IOpenTheMainMenuOnTheArticleScreen(AppiumDriver driver) {
+        Article.openMenu(driver);
     }
 }

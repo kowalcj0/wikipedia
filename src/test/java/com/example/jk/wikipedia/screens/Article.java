@@ -8,9 +8,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 
-/**
- * Created by kowal on 27/08/2016.
- */
 public class Article {
 
     private static String btnMenu = "android.widget.ImageButton";
@@ -28,6 +25,9 @@ public class Article {
 
 
     public static void allImportantElementsAreVisible(AppiumDriver driver){
+        /*
+        * Will check whether all important UI elements are visible
+        * */
         WebDriverWait wait = new WebDriverWait(driver, 5);
 
         wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.className(btnMenu))));
@@ -56,5 +56,13 @@ public class Article {
 
     public static void openSearchScreen(AppiumDriver driver, String what) {
         driver.findElementById(inptIDSearch).click();
+    }
+
+    public static boolean amIOnThisScreen(AppiumDriver driver) {
+        if(!driver.findElements(By.id(btnIDTOC)).isEmpty()){
+            return true;
+        } else {
+            return false;
+        }
     }
 }

@@ -12,9 +12,23 @@ public class RandomArticleTest extends UITest {
     public void UsersShouldBeAbleToOpenARandomArticle(){
         Given.IAmOnTheHomeScreen(driver);
 
-        When.IOpenTheMainMenu(driver);
+        When.IOpenTheMainMenuOnTheHomeScreen(driver);
         And.when.IChooseRandomArticleOption(driver);
 
+        Then.IShouldBeOnTheArticleScreen(driver);
+    }
+
+    @Test
+    public void UsersShouldBeAbleToOpenARandomArticleManyTimesInARow(){
+        Given.IAmOnTheHomeScreen(driver);
+
+        When.IOpenARandomArticle(driver);
+        Then.IShouldBeOnTheArticleScreen(driver);
+
+        When.IOpenARandomArticle(driver);
+        Then.IShouldBeOnTheArticleScreen(driver);
+
+        When.IOpenARandomArticle(driver);
         Then.IShouldBeOnTheArticleScreen(driver);
     }
 

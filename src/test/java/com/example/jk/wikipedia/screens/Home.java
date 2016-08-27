@@ -5,9 +5,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-/**
- * Created by jk on 19/08/2016.
- */
 public class Home {
 
     private static String btnMenu = "android.widget.ImageButton";
@@ -17,6 +14,9 @@ public class Home {
     private static String hdrFeaturedArticle = "Featured article";
 
     public static void allImportantElementsAreVisible(AppiumDriver driver){
+        /*
+        * Will check whether all important UI elements are visible
+        * */
         WebDriverWait wait = new WebDriverWait(driver, 5);
         wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.className(btnMenu))));
         wait.until(ExpectedConditions.visibilityOf(driver.findElementByName(txtTitle)));
@@ -31,5 +31,13 @@ public class Home {
 
     public static void openSearchScreen(AppiumDriver driver) {
         driver.findElementById(inptSearch).click();
+    }
+
+    public static boolean amIOnThisScreen(AppiumDriver driver) {
+        if(!driver.findElements(By.name(txtTitle)).isEmpty()){
+            return true;
+        } else {
+            return false;
+        }
     }
 }

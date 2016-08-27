@@ -11,7 +11,7 @@ public class HomeScreenTest extends UITest {
     public void UsersShouldBeAbleToOpenAndCloseTheMenu(){
         Given.IAmOnTheHomeScreen(driver);
 
-        When.IOpenTheMainMenu(driver);
+        When.IOpenTheMainMenuOnTheHomeScreen(driver);
         Then.IShouldSeeTheMainMenu(driver);
 
         When.ICloseTheMainMenu(driver);
@@ -22,7 +22,7 @@ public class HomeScreenTest extends UITest {
     public void UsersShouldBeAbleToOpenAndCloseTheSearchScreen(){
         Given.IAmOnTheHomeScreen(driver);
 
-        When.ITapOnTheSeachBox(driver);
+        When.ITapOnTheSearchBox(driver);
         Then.IShouldBeOnTheSearchScreen(driver);
 
         When.ICloseTheSearchScren(driver);

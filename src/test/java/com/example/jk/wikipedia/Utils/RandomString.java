@@ -3,6 +3,10 @@ package com.example.jk.wikipedia.Utils;
 import java.util.Random;
 
 public class RandomString {
+    /*
+    * Will generate a random string of specified length.
+    * Can come in handy when generating new email address etc.
+    * */
     private static final char[] symbols = new char[36];
 
     static {

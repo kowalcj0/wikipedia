@@ -12,11 +12,11 @@ public class LoginTest extends UITest {
     public void UsersShouldBeAbleToGoBackToTheHomeScreenFromTheLoginScreen(){
         Given.IAmOnTheHomeScreen(driver);
 
-        When.IOpenTheMainMenu(driver);
+        When.IOpenTheMainMenuOnTheHomeScreen(driver);
         And.when.IChooseToLogin(driver);
         Then.IShouldBeOnTheLoginScreen(driver);
 
-        When.IPressGoBackButtnonOnTheLoginScreen(driver);
+        When.IPressGoBackButtonOnTheLoginScreen(driver);
         Then.IShouldBeOnTheHomeScreen(driver);
     }
 }
