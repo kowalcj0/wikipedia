@@ -1,8 +1,8 @@
-package com.example.jk.babylon.steps;
+package com.example.jk.wikipedia.steps;
 
-import com.example.jk.babylon.screens.Home;
-import com.example.jk.babylon.screens.Login;
-import com.example.jk.babylon.screens.Menu;
+import com.example.jk.wikipedia.screens.Home;
+import com.example.jk.wikipedia.screens.Login;
+import com.example.jk.wikipedia.screens.Menu;
 import io.appium.java_client.AppiumDriver;
 
 /**

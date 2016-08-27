@@ -1,6 +1,6 @@
-package com.example.jk.babylon.steps;
+package com.example.jk.wikipedia.steps;
 
-import com.example.jk.babylon.screens.*;
+import com.example.jk.wikipedia.screens.*;
 import io.appium.java_client.AppiumDriver;
 
 /**

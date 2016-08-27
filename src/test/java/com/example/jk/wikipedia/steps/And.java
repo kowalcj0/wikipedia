@@ -1,6 +1,4 @@
-package com.example.jk.babylon.steps;
-
-import io.appium.java_client.AppiumDriver;
+package com.example.jk.wikipedia.steps;
 
 /**
  * Created by jk on 19/08/2016.

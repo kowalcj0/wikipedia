@@ -1,4 +1,4 @@
-package com.example.jk.babylon.tests;
+package com.example.jk.wikipedia.tests;
 
 /**
  * Created by kowal on 27/08/2016.

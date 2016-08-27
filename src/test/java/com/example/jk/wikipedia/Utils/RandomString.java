@@ -1,4 +1,4 @@
-package com.example.jk.babylon.Utils;
+package com.example.jk.wikipedia.Utils;
 
 import java.util.Random;
 

@@ -1,4 +1,4 @@
-package com.example.jk.babylon.screens;
+package com.example.jk.wikipedia.screens;
 
 import io.appium.java_client.AppiumDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;

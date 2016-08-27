@@ -1,9 +1,8 @@
-package com.example.jk.babylon.tests;
+package com.example.jk.wikipedia.tests;
 
-import com.example.jk.babylon.steps.And;
-import com.example.jk.babylon.steps.Given;
-import com.example.jk.babylon.steps.Then;
-import com.example.jk.babylon.steps.When;
+import com.example.jk.wikipedia.steps.Given;
+import com.example.jk.wikipedia.steps.Then;
+import com.example.jk.wikipedia.steps.When;
 import org.junit.Test;
 
 public class HomeScreenTest extends UITest {
