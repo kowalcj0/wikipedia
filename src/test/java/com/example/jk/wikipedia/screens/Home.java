@@ -29,7 +29,7 @@ public class Home {
         driver.findElement(By.className(btnMenu)).click();
     }
 
-    public static void openSearchScreen(AppiumDriver driver, String what) {
+    public static void openSearchScreen(AppiumDriver driver) {
         driver.findElementById(inptSearch).click();
     }
 }

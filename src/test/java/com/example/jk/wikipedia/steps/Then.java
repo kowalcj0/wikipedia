@@ -23,4 +23,12 @@ public class Then {
     public static void IShouldBeOnTheArticleScreen(AppiumDriver driver) {
         Article.allImportantElementsAreVisible(driver);
     }
+
+    public static void IShouldBeOnTheSearchScreen(AppiumDriver driver) {
+        Search.allImportantElementsAreVisible(driver);
+    }
+
+    public static void TheSearchResultsShouldBeVisible(AppiumDriver driver, String what) {
+        Search.searchResultsShouldBeVisible(driver, what);
+    }
 }

@@ -18,4 +18,15 @@ public class HomeScreenTest extends UITest {
         Then.IShouldBeOnTheHomeScreen(driver);
     }
 
+    @Test
+    public void UsersShouldBeAbleToOpenAndCloseTheSearchScreen(){
+        Given.IAmOnTheHomeScreen(driver);
+
+        When.ITapOnTheSeachBox(driver);
+        Then.IShouldBeOnTheSearchScreen(driver);
+
+        When.ICloseTheSearchScren(driver);
+        Then.IShouldBeOnTheHomeScreen(driver);
+    }
+
 }

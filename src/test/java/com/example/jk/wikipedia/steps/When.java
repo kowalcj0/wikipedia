@@ -3,6 +3,7 @@ package com.example.jk.wikipedia.steps;
 import com.example.jk.wikipedia.screens.Home;
 import com.example.jk.wikipedia.screens.Login;
 import com.example.jk.wikipedia.screens.Menu;
+import com.example.jk.wikipedia.screens.Search;
 import io.appium.java_client.AppiumDriver;
 
 /**
@@ -28,5 +29,18 @@ public class When {
 
     public static void IPressGoBackButtnonOnTheLoginScreen(AppiumDriver driver) {
         Login.pressGoBackButton(driver);
+    }
+
+    public static void ITapOnTheSeachBox(AppiumDriver driver) {
+        Home.openSearchScreen(driver);
+    }
+
+    public static void ISearchFor(AppiumDriver driver, String what) {
+        Home.openSearchScreen(driver);
+        Search.searchFor(driver, what);
+    }
+
+    public static void ICloseTheSearchScren(AppiumDriver driver) {
+        Search.close(driver);
     }
 }
